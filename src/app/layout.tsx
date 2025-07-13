@@ -5,6 +5,7 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { Toaster } from "@/components/ui/toaster";
 import { SITE_NAME } from "@/lib/constants";
+import { motion, AnimatePresence } from 'framer-motion';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -44,7 +45,18 @@ export default function RootLayout({
 
           <div className="relative z-10 flex flex-col min-h-screen">
             <Navbar />
-            <main className="flex-grow bg-gray-950">{children}</main>
+              <AnimatePresence mode="wait">
+                <motion.main
+                  key={Math.random()} // Note: A better key would be the route path, but this is a simple way to trigger on every change.
+                  className="flex-grow bg-gray-950"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5, ease: 'easeInOut' }}
+                >
+                  {children}
+                </motion.main>
+              </AnimatePresence>
             <Footer />
           </div>
 

@@ -174,7 +174,7 @@ export default function ConsultingPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Column - Text */}
             <div className="flex flex-col justify-center max-w-xl mx-auto lg:mx-0">
-              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none mb-8">
+              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none mb-8">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-500 via-pink-500 to-indigo-600 animate-sparkle">
                   Tokenomics Consulting Services
                 </span>
@@ -184,7 +184,7 @@ export default function ConsultingPage() {
                   <div className="rounded-full bg-purple-600/20 p-1.5 mt-1.5 group-hover:bg-purple-600/40 group-hover:scale-110 transition-all duration-300">
                     <CheckCircle className="h-6 w-6 text-purple-400 group-hover:text-purple-300" />
                   </div>
-                  <span className="text-2xl text-gray-300 font-medium leading-tight group-hover:text-white group-hover:translate-x-1 transition-all duration-300">
+                  <span className="text-xl md:text-2xl text-gray-300 font-medium leading-tight group-hover:text-white group-hover:translate-x-1 transition-all duration-300">
                     Customized tokenomics designs tailored to your project's
                     unique goals
                   </span>
@@ -193,7 +193,7 @@ export default function ConsultingPage() {
                   <div className="rounded-full bg-purple-600/20 p-1.5 mt-1.5 group-hover:bg-purple-600/40 group-hover:scale-110 transition-all duration-300">
                     <CheckCircle className="h-6 w-6 text-purple-400 group-hover:text-purple-300" />
                   </div>
-                  <span className="text-2xl text-gray-300 font-medium leading-tight group-hover:text-white group-hover:translate-x-1 transition-all duration-300">
+                 <span className="text-xl md:text-2xl text-gray-300 font-medium leading-tight group-hover:text-white group-hover:translate-x-1 transition-all duration-300">
                     Strategic expertise from Web3 veterans with proven success
                   </span>
                 </li>
@@ -201,7 +201,7 @@ export default function ConsultingPage() {
                   <div className="rounded-full bg-purple-600/20 p-1.5 mt-1.5 group-hover:bg-purple-600/40 group-hover:scale-110 transition-all duration-300">
                     <CheckCircle className="h-6 w-6 text-purple-400 group-hover:text-purple-300" />
                   </div>
-                  <span className="text-2xl text-gray-300 font-medium leading-tight group-hover:text-white group-hover:translate-x-1 transition-all duration-300">
+                  <span className="text-xl md:text-2xl text-gray-300 font-medium leading-tight group-hover:text-white group-hover:translate-x-1 transition-all duration-300">
                     Sustainable frameworks that drive long-term value and
                     adoption
                   </span>

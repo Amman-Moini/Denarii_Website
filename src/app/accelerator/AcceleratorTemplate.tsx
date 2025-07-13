@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import { SectionWrapper } from "@/components/common/section-wrapper";
 import {
   Card,
@@ -9,11 +9,14 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, CalendarDays, Users, Target, DivideIcon as LucideIcon, Sparkles, Zap, Network, DollarSign, CheckCircle, ArrowRight, Star, Rocket, Shield, Code, Clock, MapPin, CircleCheck, TrendingUp, Award, Globe, Timer } from "lucide-react";
+import { ArrowLeft, CalendarDays, Users, Target, Sparkles, Zap, Network, DollarSign, CheckCircle, CircleCheck, ArrowRight, Star, Rocket, Shield, Code, Clock, MapPin, TrendingUp, Award, Globe, Timer } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { CtaButton } from "@/components/common/cta-button";
 import { motion } from "framer-motion";
+import type { ElementType } from "react";
+
+type LucideIcon = ElementType;
 
 interface AcceleratorPageProps {
   title: string;
@@ -28,7 +31,7 @@ interface AcceleratorPageProps {
   benefits: string[];
   ctaTitle: string;
   ctaDescription: string;
-  icon: LucideIcon;
+  icon: LucideIcon; // <--- NOW CORRECT
   technicalDetails?: {
     title: string;
     description: string;
@@ -43,7 +46,7 @@ interface AcceleratorPageProps {
 interface ProgramDetail {
   label: string;
   value: string;
-  icon: LucideIcon;
+  icon: LucideIcon; // <--- NOW CORRECT
   className: string;
 }
 
@@ -108,40 +111,45 @@ export default function AcceleratorTemplate({
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 lg:gap-12 mt-8 lg:mt-0">
             <div className="w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] lg:w-[300px] lg:h-[300px]">
               {title.includes('Avalanche') && (
-                <img 
+                <Image 
                   src="/Sponsors/avalanchelogo.png" 
                   alt="Avalanche Logo" 
-                  className="w-full h-full object-contain"
+                  fill
+                  className="object-contain"
                 />
               )}
               {title.includes('Wire') && (
-                <img 
+                <Image 
                   src="/Sponsors/wirelogo.png" 
-                  alt="Wire Network Logo" 
-                  className="w-full h-full object-contain"
+                  alt="Wire Network Logo"
+                  fill 
+                  className="object-contain"
                 />
               )}
               {title.includes('XION') && (
-                <img 
+                <Image 
                   src="/Chains/xion.png" 
                   alt="XION Logo" 
-                  className="w-full h-full object-contain"
+                  fill
+                  className="object-contain"
                 />
               )}
               {title.includes('F Ecosystem') && (
-                <img 
+                <Image
                   src="/Chains/fchain.png" 
                   alt="F Ecosystem Logo" 
-                  className="w-full h-full object-contain"
+                  fill
+                  className="object-contain"
                 />
               )}
             </div>
             <div className="h-[2px] w-[200px] sm:h-[250px] sm:w-[2px] lg:h-[300px] bg-gradient-to-r sm:bg-gradient-to-b from-purple-500/50 via-pink-500/50 to-indigo-500/50" />
             <div className="w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] lg:w-[300px] lg:h-[300px]">
-              <img 
+              <Image 
                 src="/Logo/Denarii-Logo_Stacked-Vertical -white.svg" 
                 alt="Denarii Logo" 
-                className="w-full h-full object-contain"
+                fill
+                className="object-contain"
               />
             </div>
           </div>

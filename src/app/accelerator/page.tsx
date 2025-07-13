@@ -490,7 +490,7 @@ export default function AcceleratorPage() {
               <br />
               <span className="text-white">of Tokenized Startups</span>
             </h1>
-            <p className="max-w-2xl text-gray-300 md:text-xl font-medium mb-4">
+            <p className="max-w-2xl text-lg text-gray-300 md:text-xl font-medium mb-4">
               Scaling Web3 startups with capital, mentorship, and a world-class
               network. Backed by Red Beard Ventures.
             </p>

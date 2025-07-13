@@ -1,9 +1,11 @@
+import { motion } from "framer-motion";
+import React, { Suspense } from 'react';
+const LogoMarquee = React.lazy(() => import('@/components/ui/LogoMarquee').then(module => ({ default: module.LogoMarquee })));
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Zap, Shield, LineChart, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SparkleText } from "@/components/ui/sparkle-text";
-import { LogoMarquee } from "@/components/ui/LogoMarquee";
 import { ScrollBackground } from "@/components/ui/scroll-background";
 import {
   Card,
@@ -93,12 +95,12 @@ export default function Home() {
               {/* Left: Text, CTAs */}
               <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left space-y-10">
                 <div>
-                  <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight mb-4">
+                  <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-4">
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-500 via-pink-500 to-indigo-600 animate-sparkle">
                       Accelerator & Consulting for Web3
                     </span>
                   </h1>
-                  <p className="max-w-2xl text-gray-300 md:text-xl font-medium mb-8 mt-4">
+                  <p className="max-w-2xl text-lg text-gray-300 md:text-xl font-medium mb-8 mt-4">
                     Denarii Labs empowers founders and protocols with a
                     world-class accelerator and an expert tokenomics consulting
                     arm. Scale your Web3 project with capital, tokenomics, and
@@ -235,6 +237,7 @@ export default function Home() {
         </section>
 
         {/* Logo Rows Section */}
+        <Suspense fallback={<div className="h-48" />}>
         <section className="py-16">
           <div className="w-full overflow-hidden">
             {/* Top Row - Scrolls right */}
@@ -248,7 +251,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-
+        </Suspense>
         {/* Features Section */}
         <SectionWrapper className="relative">
           <div className="mb-12 text-center">
@@ -262,10 +265,12 @@ export default function Home() {
           </div>
           <div className="grid gap-8 md:grid-cols-3">
             {features.map((feature) => (
-              <Card
-                key={feature.title}
-                className="bg-card/50 backdrop-blur border-primary/10 hover:border-primary/20 transition-all duration-300"
-              >
+               <motion.div
+                  key={feature.title}
+                  className="bg-card/50 backdrop-blur border-primary/10 rounded-lg" // Card is a div, so we replicate its base styles
+                  whileHover={{ y: -8, boxShadow: "0 10px 20px rgba(168, 85, 247, 0.1)" }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}>
+                  
                 <CardHeader>
                   <div className="mb-4 inline-flex rounded-lg bg-primary/10 p-3">
                     <feature.icon className="h-6 w-6 text-primary" />
@@ -282,7 +287,7 @@ export default function Home() {
                     </Link>
                   </Button>
                 </CardFooter>
-              </Card>
+              </motion.div>
             ))}
           </div>
         </SectionWrapper>
@@ -300,18 +305,20 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
             {partners.map((partner) => (
-              <div
+              <motion.div
                 key={partner.name}
                 className="flex items-center justify-center p-4"
-              >
+                whileHover={{ scale: 1.1, filter: "brightness(1.1)" }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+                >
                 <Image
                   src={partner.logo}
                   alt={partner.name}
                   width={200}
                   height={80}
-                  className="opacity-50 hover:opacity-100 transition-opacity duration-300"
+                  className="opacity-50 transition-opacity duration-300"
                 />
-              </div>
+              </motion.div>
             ))}
           </div>
         </SectionWrapper>
