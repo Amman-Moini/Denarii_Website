@@ -1,3 +1,4 @@
+"use client";
 import { motion } from "framer-motion";
 import React, { Suspense } from 'react';
 const LogoMarquee = React.lazy(() => import('@/components/ui/LogoMarquee').then(module => ({ default: module.LogoMarquee })));
