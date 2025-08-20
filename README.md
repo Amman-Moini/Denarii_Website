@@ -11,15 +11,13 @@ While the full site migration is a work in progress, this repository contains th
 You can view a live deployment of the current progress here:
 
 **https://denarii-website.vercel.app/**
+> [!IMPORTANT]
+> ## Key Pages to Review
+> To see the most developed parts of this project, please navigate to the following pages from the homepage:
+>
+> - **Accelerator Page**: Click on **"Explore Accelerator"**. This section demonstrates a dynamic template for different accelerator tracks.
+> - **Tokenomics Consulting Page**: Click on **"Tokenomics Consulting"**. (Note: This page is a placeholder but is set up within the routing structure.)
 
-### Key Pages to Review
-
-To see the most developed parts of this project, please navigate to:
-
--   **Accelerator Page**: Click on the "**Explore Accelerator**" button on the homepage. This section demonstrates a dynamic template for different accelerator tracks.
--   **Tokenomics Consulting Page**: Click on the "**Tokenomics Consulting**" button. *(Note: This page is a placeholder but is set up within the routing structure.)*
-
----
 
 ## 📋 Project Status
 
