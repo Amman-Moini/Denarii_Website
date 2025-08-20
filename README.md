@@ -10,7 +10,7 @@ While the full site migration is a work in progress, this repository contains th
 
 You can view a live deployment of the current progress here:
 
-**[YOUR VERCEL DEPLOYMENT LINK HERE]**
+**[denarii-website.vercel.app]**
 
 ### Key Pages to Review
 
